@@ -1,0 +1,14 @@
+{
+  "name": "npm",
+  "description": "Products catalog",
+  "private": true,
+  "scripts": {},
+  "keywords": [],
+  "author": "Dmitriy",
+  "dependencies": {
+    "eslint": "^8.55.0",
+    "navigo": "^8.11.1",
+    "parcel": "^2.10.3",
+    "redom": "^4.0.0"
+  }
+}

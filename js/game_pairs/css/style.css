@@ -1,0 +1,136 @@
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.label {
+  margin-bottom: 20px;
+}
+
+.input {
+  margin-bottom: 20px;
+}
+
+
+.new-game {
+  padding: 0;
+  padding: 10px;
+  border: none;
+  background-color: #8bf0dd;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.area {
+  margin: 0 auto;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.list-area {
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-around;
+}
+
+.area-item {
+  width: 60px;
+  height: 60px;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+}
+
+.area-item-transform {
+  transform: rotateY(180deg);
+}
+
+
+
+.back,
+.front {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: #999;
+  font-size: 30px;
+
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+.clock {
+  margin-bottom: 20px;
+  padding: 10px 50px;
+  border: 1px solid black;
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 15%;
+  height: 180px;
+  background-color: rgb(72, 19, 117);
+  color: transparent;
+  font-size: 42px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, transform 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.card.open {
+background-color: rgb(59, 19, 203);
+color: bisque;
+}
+
+.card.success {
+  background-color: rgb(22, 52, 22);
+  color: white;
+  transform: scale(0.95);
+}
