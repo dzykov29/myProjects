@@ -2,13 +2,23 @@
   "name": "npm",
   "description": "Products catalog",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "lint": "eslint ./",
+    "lint:report": "eslint ./"
+  },
   "keywords": [],
   "author": "Dmitriy",
   "dependencies": {
-    "eslint": "^8.55.0",
     "navigo": "^8.11.1",
-    "parcel": "^2.10.3",
-    "redom": "^4.0.0"
+    "redom": "^4.0.0",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-formatter-gitlab": "^2.1.0",
+    "eslint-plugin-import": "^2.22.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.10.3"
   }
 }
