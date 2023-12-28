@@ -4,23 +4,7 @@ import TodoList from './components/TodoList';
 import Form from './components/Form';
 
 function App() {
-  const [todoTasks, setTodoTasks] = useState([
-    {
-      id: 1,
-      descr: 'Новое дело',
-      done: false,
-    },
-    {
-      id: 2,
-      descr: 'Новое дело1',
-      done: false,
-    },
-    {
-      id: 3,
-      descr: 'Новое дело2',
-      done: false,
-    },
-  ]);
+  const [todoTasks, setTodoTasks] = useState([]);
 
   const handleAddTask = (newTask) => {
     setTodoTasks((prevTasks) => [...prevTasks, newTask]);
@@ -32,10 +16,26 @@ function App() {
     console.log(todoTasks);
   }
 
+  const handleUpdateTaskDone = (id, done) => {
+    setTodoTasks((prevTasks) => 
+      prevTasks.map((prevTask) =>
+        prevTask.id === id ? { ...prevTask, done } : prevTask
+      )
+    );
+  };
+
+  // Сортировка по полю 'done'
+  const sortedTasks = todoTasks.sort((a, b) => (a.done === b.done ? 0 : a.done ? 1 : -1));
+
   return (
     <div className='container'>
       <Form addNewTask={handleAddTask} />
-      <TodoList deleteTask={handleDeleteTask} tasks={todoTasks} />
+      { !todoTasks.length ? 
+      <div>Список пуст...</div>
+        :
+        <TodoList deleteTask={handleDeleteTask} taskDone={handleUpdateTaskDone} tasks={sortedTasks} />
+      }
+      
     </div>
   );
 }

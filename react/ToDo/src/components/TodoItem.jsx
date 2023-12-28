@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import './TodoItem.css';
+import React, { useState, useEffect } from 'react';
+import './styles/TodoItem.css';
 
-function TodoItem({ task, deleteTask }) {
+function TodoItem({ task, deleteTask, updateTaskDone }) {
 
   const [done, setDone] = useState(false);
 
@@ -12,12 +12,17 @@ function TodoItem({ task, deleteTask }) {
 
   const handleDone = () => {
     setDone(!done)
+    updateTaskDone(task.id, !done);
   }
+
+  useEffect(() => {
+    setDone(task.done); // Обновляем состояние, когда task.done изменяется извне
+  }, [task.done]);
 
   return (
     <li className='todo-list__item item'>
       <div className='item__wrapper'>
-        <input className='item__input' type='checkbox' onChange={handleDone} checked={done} />
+          <input className='item__input' type='checkbox' onChange={handleDone} checked={done} />
         {done ? 
           <p className='item__descr'><s>{task.descr}</s></p>
           :
