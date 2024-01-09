@@ -23,7 +23,7 @@ function getProductList() {
           onClick(event) {
             event.preventDefault();
             router.navigate(event.target.getAtribute('href'));
-          }
+          },
         },
         product.title),
       )));
@@ -48,7 +48,7 @@ function catalogDetails(id) {
 
       setChildren(body, [
         el('a', {
-          href: `/`,
+          href: '/',
           onClick(event) {
             event.preventDefault();
             router.navigate(event.target.getAtribute('href'));
